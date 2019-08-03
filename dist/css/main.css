@@ -26,11 +26,26 @@ body {
 
 .container {
   max-width: 120rem;
-  margin: 0 auto;
-  padding: 0 3rem; }
+  margin: 0 auto; }
 
-.u-color-primary {
+.u-text-primary {
   color: #24ba9d; }
+
+.btn, .btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: .5rem;
+  color: #fff;
+  background-color: #24ba9d;
+  transition: all .2s; }
+
+.btn:hover {
+  transform: translateY(-3px);
+  background-color: #38d9ba; }
+
+.btn--showcase {
+  padding: 1rem 3rem; }
 
 .tooltip {
   position: relative;
@@ -87,3 +102,32 @@ body {
       padding: 1.2rem; }
     .main-nav__menu-item-link:hover {
       color: #fff; }
+
+.showcase {
+  background-image: linear-gradient(#f8f8f8 0%, #cfced3 99%);
+  padding: 2rem; }
+  .showcase .container {
+    display: grid;
+    grid-template-columns: 1fr 6fr 10fr 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; }
+  .showcase__arrow {
+    justify-self: center;
+    font-size: 4rem;
+    color: #24ba9d;
+    cursor: pointer; }
+    .showcase__arrow:hover {
+      color: #38d9ba; }
+  .showcase__content {
+    text-align: center;
+    padding-top: 6rem;
+    padding-left: 6rem;
+    padding-right: 6rem; }
+  .showcase__img {
+    width: 100%; }
+  .showcase__heading {
+    text-transform: uppercase;
+    font-size: 4rem; }
+  .showcase__description {
+    margin-bottom: 4.5rem; }
