@@ -1,0 +1,51 @@
+.tooltip {
+    position: relative;
+    display: inline-block;
+
+    &__menu {
+        display: none;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        white-space: nowrap;
+        padding-top: 2.7rem;
+        text-align: center;
+
+        &-item {
+
+            &-link {
+                display: block;
+                padding: 1rem 2rem;
+                background-color: black;
+                color: $color-menu;
+                text-decoration: none;
+
+                &:hover {
+                    color: #fff;
+                    background-color: $color-primary;
+                }
+            }
+
+        }
+
+        &:after {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 1.7rem;
+            width: 0;
+            height: 0;
+            content: '';
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid black;
+        }
+
+    }
+
+    &:hover &__menu {
+        display: block;
+       
+    }
+
+}

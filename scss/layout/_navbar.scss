@@ -1,0 +1,38 @@
+.main-nav {
+    background: rgb(0, 0, 0);
+    position: sticky;
+    top: 0;
+
+    .container {
+        display: grid;
+        grid-template-columns: 6fr 2fr;
+        padding: 1rem;
+        align-items: center;
+    }
+
+    &__logo {
+        &:link,
+        &:visited {
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 2.4rem;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+
+        &-item-link {
+            &:link,
+            &:visited {
+                color: $color-menu;
+                padding: 1.2rem;
+            }
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
