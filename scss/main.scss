@@ -5,7 +5,23 @@
 @import "base/utilities";
 
 @import "components/btn";  
-@import "components/tooltip";        
+@import "components/tooltip"; 
+@import "components/border";                         
 
 @import "layout/navbar"; 
-@import "layout/showcase";                                                                   
+@import "layout/showcase"; 
+@import "layout/gallery";                                  
+ 
+/* 
+https://github.com/DrMalina/Furniture-WebPage/blob/master/index.html
+
+https://github.com/DrMalina/Traversy-NewsGrid/blob/master/index.html
+
+https://github.com/DrMalina/Traversy-NewsGrid/blob/master/scss/main.scss
+
+https://trusting-sinoussi-dabb02.netlify.com/index.html
+
+https://github.com/DrMalina/Natours/blob/master/starter/sass/components/_button.scss
+
+
+*/

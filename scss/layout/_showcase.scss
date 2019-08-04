@@ -11,10 +11,14 @@
     }
 
     &__arrow {
-        justify-self: center;
+        //justify-self: center;
         font-size: 4rem;
         color: $color-primary;
         cursor: pointer;
+
+        &--right {
+            justify-self: end;
+        }
 
         &:hover {
             color: $color-primary-light;

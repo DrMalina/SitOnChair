@@ -20,7 +20,7 @@ ul {
   list-style: none; }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1.5;
   font-size: 1.6rem; }
 
@@ -81,6 +81,11 @@ body {
   .tooltip:hover .tooltip__menu {
     display: block; }
 
+.border {
+  height: .8rem;
+  width: 100%;
+  background-color: #24ba9d; }
+
 .main-nav {
   background: black;
   position: sticky;
@@ -88,7 +93,7 @@ body {
   .main-nav .container {
     display: grid;
     grid-template-columns: 6fr 2fr;
-    padding: 1rem;
+    padding: 1rem 0;
     align-items: center; }
   .main-nav__logo:link, .main-nav__logo:visited {
     text-transform: uppercase;
@@ -113,10 +118,11 @@ body {
     align-items: center;
     height: 50vh; }
   .showcase__arrow {
-    justify-self: center;
     font-size: 4rem;
     color: #24ba9d;
     cursor: pointer; }
+    .showcase__arrow--right {
+      justify-self: end; }
     .showcase__arrow:hover {
       color: #38d9ba; }
   .showcase__content {
@@ -131,3 +137,67 @@ body {
     font-size: 4rem; }
   .showcase__description {
     margin-bottom: 4.5rem; }
+
+.gallery__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4rem;
+  margin-top: 10rem;
+  margin-bottom: 10rem; }
+
+.gallery__card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  cursor: pointer;
+  font-family: "Raleway", sans-serif;
+  transition: all .2s; }
+  .gallery__card--description {
+    border: 1px solid #D4D4D4;
+    padding: 1.5rem; }
+  .gallery__card:hover {
+    transform: scale(1.1); }
+
+.gallery__img {
+  width: 100%;
+  grid-column: 1 / -1; }
+
+.gallery__overlay {
+  grid-column: 1 / -1;
+  padding: 1.25rem;
+  transform: translateY(-120%);
+  background-color: rgba(255, 255, 255, 0.5);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr); }
+
+.gallery__heading {
+  font-size: 1.6rem; }
+  .gallery__heading--chair {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2; }
+  .gallery__heading--description {
+    padding-top: 2rem; }
+
+.gallery__paragraph {
+  grid-column: 1 / -1; }
+
+.gallery__border {
+  grid-column: 1 / 2;
+  grid-row: 2 / 2;
+  align-self: center; }
+  .gallery__border--description {
+    align-self: initial; }
+
+/* 
+https://github.com/DrMalina/Furniture-WebPage/blob/master/index.html
+
+https://github.com/DrMalina/Traversy-NewsGrid/blob/master/index.html
+
+https://github.com/DrMalina/Traversy-NewsGrid/blob/master/scss/main.scss
+
+https://trusting-sinoussi-dabb02.netlify.com/index.html
+
+https://github.com/DrMalina/Natours/blob/master/starter/sass/components/_button.scss
+
+
+*/
