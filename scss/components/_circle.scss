@@ -1,0 +1,15 @@
+.circle {
+    border-radius: 50%;
+    width: 8rem;
+    height: 8rem;
+    display: block;
+    
+    &--card {
+        background-color: orangered;
+        position: absolute;
+        z-index: 10;
+        grid-column: 2 / 3;
+        justify-self: center;
+        transform: translateY(-50%);
+    }
+}

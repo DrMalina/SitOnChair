@@ -31,6 +31,10 @@ body {
 .u-text-primary {
   color: #24ba9d; }
 
+.heading-3 {
+  text-transform: uppercase;
+  font-size: 1.8rem; }
+
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -85,6 +89,19 @@ body {
   height: .8rem;
   width: 100%;
   background-color: #24ba9d; }
+
+.circle {
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  display: block; }
+  .circle--card {
+    background-color: orangered;
+    position: absolute;
+    z-index: 10;
+    grid-column: 2 / 3;
+    justify-self: center;
+    transform: translateY(-50%); }
 
 .main-nav {
   background: black;
@@ -187,6 +204,29 @@ body {
   align-self: center; }
   .gallery__border--description {
     align-self: initial; }
+
+.pricing {
+  background-color: #f1f1f1; }
+  .pricing__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content min-content 9rem min-content;
+    grid-column-gap: 2rem; }
+  .pricing__heading {
+    grid-column: 1 / 1;
+    padding-top: 2rem; }
+  .pricing__border {
+    grid-column: 1 / 1;
+    grid-row: 2 / 2; }
+  .pricing__card {
+    grid-row: 4 / -1;
+    border: 1px solid #D4D4D4;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    height: 50rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; }
 
 /* 
 https://github.com/DrMalina/Furniture-WebPage/blob/master/index.html

@@ -1,0 +1,38 @@
+.pricing {
+    background-color: $color-billing;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: min-content min-content 9rem min-content;
+        grid-column-gap: 2rem;
+    }
+
+    &__heading {
+        grid-column: 1 / 1;
+        padding-top: 2rem;
+    }
+
+    &__border {
+        grid-column: 1 / 1;
+        grid-row: 2 / 2;
+    }
+
+    &__card {
+        grid-row: 4 / -1;
+        border: $color-border-light;
+        width: 100%;
+        text-align: center;
+        position: relative;
+
+        height: 50rem;
+
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    &__title {
+        grid-column: 2 / 3;
+        padding-top: 5rem;
+    }
+}
