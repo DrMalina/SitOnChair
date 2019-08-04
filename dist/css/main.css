@@ -51,6 +51,11 @@ body {
 .btn--showcase {
   padding: 1rem 3rem; }
 
+.btn--price-plan {
+  grid-column: 2 / 3;
+  padding: 1rem 3rem;
+  align-self: end; }
+
 .tooltip {
   position: relative;
   display: inline-block; }
@@ -92,21 +97,38 @@ body {
 
 .circle {
   border-radius: 50%;
-  width: 8rem;
-  height: 8rem;
   display: block; }
   .circle--card {
-    background-color: orangered;
+    width: 7rem;
+    height: 7rem;
+    background-color: inherit;
     position: absolute;
     z-index: 10;
     grid-column: 2 / 3;
     justify-self: center;
-    transform: translateY(-50%); }
+    transform: translateY(-50%);
+    border: 1px solid #D4D4D4; }
+    .circle--card::before {
+      content: "";
+      display: inline-block;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      background-color: #D4D4D4;
+      transform: translateY(50%); }
+  .circle--price {
+    border: 1px solid #D4D4D4;
+    height: 14rem;
+    width: 14rem;
+    grid-column: 2 / 3;
+    justify-self: center;
+    display: grid; }
 
 .main-nav {
   background: black;
   position: sticky;
-  top: 0; }
+  top: 0;
+  z-index: 99; }
   .main-nav .container {
     display: grid;
     grid-template-columns: 6fr 2fr;
@@ -211,7 +233,8 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: min-content min-content 9rem min-content;
-    grid-column-gap: 2rem; }
+    grid-column-gap: 4rem;
+    padding-bottom: 6rem; }
   .pricing__heading {
     grid-column: 1 / 1;
     padding-top: 2rem; }
@@ -219,14 +242,40 @@ body {
     grid-column: 1 / 1;
     grid-row: 2 / 2; }
   .pricing__card {
+    background-color: #F9F9F9;
     grid-row: 4 / -1;
     border: 1px solid #D4D4D4;
     width: 100%;
     text-align: center;
     position: relative;
-    height: 50rem;
+    padding-bottom: 4rem;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr; }
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: min-content max-content min-content;
+    grid-row-gap: 3.5rem; }
+  .pricing__title {
+    grid-column: 2 / 3;
+    padding-top: 5rem; }
+  .pricing__price {
+    align-self: end;
+    font-size: 3.5rem; }
+  .pricing__billed {
+    font-size: 1.2rem; }
+  .pricing__price, .pricing__billed {
+    text-transform: uppercase;
+    color: #949294; }
+  .pricing__features {
+    grid-column: 1 / -1; }
+  .pricing__feature {
+    padding: 1rem 2rem;
+    color: #949294;
+    border-top: 1px solid #D4D4D4; }
+    .pricing__feature:nth-child(2n-1) {
+      background-color: #e5e3e5; }
+    .pricing__feature:nth-child(2n) {
+      background-color: #f2f0f2; }
+    .pricing__feature:last-child {
+      border-bottom: 1px solid #D4D4D4; }
 
 /* 
 https://github.com/DrMalina/Furniture-WebPage/blob/master/index.html

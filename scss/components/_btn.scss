@@ -19,4 +19,11 @@
     &--showcase {
         padding: 1rem 3rem;
     }
+
+    &--price-plan {
+        grid-column: 2 / 3;
+        //grid-column: 1 / -1;
+        padding: 1rem 3rem;
+        align-self: end;
+    }
 }

@@ -1,15 +1,39 @@
 .circle {
     border-radius: 50%;
-    width: 8rem;
-    height: 8rem;
     display: block;
     
     &--card {
-        background-color: orangered;
+        width: 7rem;
+        height: 7rem;
+        background-color: inherit;
         position: absolute;
         z-index: 10;
         grid-column: 2 / 3;
+        //grid-column: 1 / -1;
         justify-self: center;
         transform: translateY(-50%);
+        border: $border-light;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            background-color: $color-border-light;
+            transform: translateY(50%);
+
+        }
+    }
+
+    &--price {
+        border: $border-light;
+        height: 14rem;
+        width: 14rem;
+        grid-column: 2 / 3;
+        //grid-column: 1 / -1;
+        justify-self: center;
+        display: grid;
+        
     }
 }

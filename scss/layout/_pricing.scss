@@ -5,7 +5,8 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: min-content min-content 9rem min-content;
-        grid-column-gap: 2rem;
+        grid-column-gap: 4rem;
+        padding-bottom: 6rem;
     }
 
     &__heading {
@@ -19,20 +20,64 @@
     }
 
     &__card {
+        background-color: $color-price-card;
         grid-row: 4 / -1;
-        border: $color-border-light;
+        border: $border-light;
         width: 100%;
         text-align: center;
         position: relative;
+        padding-bottom: 4rem;
 
-        height: 50rem;
+        //height: 50rem;
 
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: min-content max-content min-content;
+        grid-row-gap: 3.5rem;
+        //grid-template-columns: 1fr;
     }
 
     &__title {
         grid-column: 2 / 3;
+        //grid-column: 1 / -1;
         padding-top: 5rem;
+    }
+
+    &__price {
+        align-self: end;
+        font-size: 3.5rem;
+    }
+
+    &__billed {
+        font-size: 1.2rem;
+    }
+
+    &__price,
+    &__billed {
+        text-transform: uppercase;
+        color: $color-price-text;
+    }
+
+    &__features {
+        grid-column: 1 / -1;
+    }
+    
+    &__feature {
+        padding: 1rem 2rem;
+        color: $color-price-text;
+        //border: $border-light;
+        border-top: $border-light;
+
+        &:nth-child(2n-1) {
+            background-color: $color-feature-odd;
+        }
+
+        &:nth-child(2n) {
+            background-color: $color-feature-even;
+        }
+
+        &:last-child {
+            border-bottom: $border-light;
+        }
     }
 }
