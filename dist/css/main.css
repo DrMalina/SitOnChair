@@ -26,10 +26,19 @@ body {
 
 .container {
   max-width: 120rem;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding: 0 2rem; }
 
 .u-text-primary {
   color: #24ba9d; }
+
+.u-bold {
+  font-weight: 700; }
+
+.heading-2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.8rem;
+  text-transform: uppercase; }
 
 .heading-3 {
   text-transform: uppercase;
@@ -55,6 +64,13 @@ body {
   grid-column: 2 / 3;
   padding: 1rem 3rem;
   align-self: end; }
+
+.btn--order {
+  width: 80%;
+  justify-self: center;
+  text-align: center;
+  align-self: center;
+  padding: 1rem 3rem; }
 
 .tooltip {
   position: relative;
@@ -123,6 +139,84 @@ body {
     grid-column: 2 / 3;
     justify-self: center;
     display: grid; }
+
+.fieldset {
+  border: none;
+  display: grid;
+  grid-template-columns: 1fr 6fr; }
+  .fieldset__legend {
+    grid-column: 1 / -1; }
+
+.custom-select {
+  grid-column: 1 / -1;
+  position: relative;
+  outline: none; }
+  .custom-select__features {
+    background-color: #fff;
+    color: #949294;
+    border: 1px solid #24ba9d;
+    padding: 1rem 3rem;
+    width: 100%;
+    font-size: 1.6rem;
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none; }
+  .custom-select:before {
+    content: "";
+    border: 1px solid #24ba9d;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    width: 1rem;
+    height: 1rem;
+    pointer-events: none; }
+
+.custom-checkbox {
+  margin-top: 2rem;
+  display: block;
+  position: relative;
+  padding-left: 6.5rem;
+  margin-bottom: 1.2rem;
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 2.5;
+  user-select: none; }
+  .custom-checkbox__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0; }
+  .custom-checkbox__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5rem;
+    width: 5rem;
+    background-color: #fff;
+    border: 1px solid #24ba9d; }
+    .custom-checkbox__checkmark:after {
+      content: "";
+      position: absolute;
+      display: none; }
+  .custom-checkbox:hover .custom-checkbox__input ~ .custom-checkbox__checkmark {
+    background-color: #38d9ba; }
+  .custom-checkbox__input:checked ~ .custom-checkbox__checkmark {
+    background-color: #24ba9d; }
+  .custom-checkbox__input:checked ~ .custom-checkbox__checkmark:after {
+    display: block; }
+  .custom-checkbox__checkmark:after {
+    left: 45%;
+    top: 25%;
+    width: 1rem;
+    height: 2rem;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg); }
 
 .main-nav {
   background: black;
@@ -258,9 +352,11 @@ body {
     padding-top: 5rem; }
   .pricing__price {
     align-self: end;
-    font-size: 3.5rem; }
+    font-size: 3.5rem;
+    font-weight: 700; }
   .pricing__billed {
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    font-weight: 400; }
   .pricing__price, .pricing__billed {
     text-transform: uppercase;
     color: #949294; }
@@ -276,6 +372,60 @@ body {
       background-color: #f2f0f2; }
     .pricing__feature:last-child {
       border-bottom: 1px solid #D4D4D4; }
+
+.order {
+  background-color: #f1f1f1;
+  margin-bottom: 6rem; }
+  .order__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 4rem;
+    padding-bottom: 6rem; }
+  .order__border {
+    grid-column: 1 / -1;
+    margin-bottom: 2.5rem; }
+  .order__features {
+    grid-column: 1 / -1;
+    margin-bottom: 1rem;
+    text-transform: uppercase; }
+    .order__features:active, .order__features:focus {
+      outline: none; }
+  .order__feature {
+    padding: 1rem 3rem; }
+    .order__feature:active, .order__feature:focus {
+      outline: none; }
+  .order__transport {
+    grid-column: 1 / -1; }
+  .order__photo {
+    align-self: center;
+    justify-self: center;
+    width: 70%; }
+  .order__summary {
+    display: grid;
+    grid-template-rows: min-content min-content; }
+  .order__heading {
+    font-weight: 400; }
+  .order__pricing {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-transform: uppercase; }
+  .order__list-heading {
+    font-weight: 400; }
+  .order__list-features {
+    padding-left: 1rem; }
+    .order__list-features li:not(:first-child) {
+      border-right: 1px solid #D4D4D4; }
+  .order__list-summary {
+    padding-left: 1rem; }
+  .order__list-prices {
+    color: #24ba9d; }
+  .order__list-summary, .order__list-total {
+    border-top: 1px solid #D4D4D4;
+    padding-top: .5rem;
+    font-size: 1.8rem; }
+  .order__list-prices, .order__list-total {
+    padding-right: 1rem;
+    text-align: end; }
 
 /* 
 https://github.com/DrMalina/Furniture-WebPage/blob/master/index.html

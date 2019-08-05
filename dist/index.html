@@ -42,7 +42,7 @@
             <i class="showcase__arrow showcase__arrow--right fas fa-angle-right fa-2x"></i>
         </div>
     </header>
-    <!-- Gallery -->
+    <!-- Section: Gallery -->
     <section id="gallery" class="gallery">
         <div class="container">
             <div class="gallery__container">
@@ -68,7 +68,7 @@
             </div>
         </div>
     </section>
-    <!-- Pricing -->
+    <!-- Section: Pricing -->
     <section class="pricing">
         <div class="container">
             <div class="pricing__container">
@@ -119,5 +119,74 @@
             </div>
         </div>
     </section>
+    <!-- Section: Ordering -->
+    <section class="order">
+        <div class="container">
+            <div class="order__container">
+                <form action="" class="order__creator">
+                    <fieldset class="fieldset">
+                        <legend class="fieldset__legend order__heading heading-2">Create your own chair</legend>
+                        <div class="order__border border"></div>
+                        <div class="custom-select">
+                            <select class="order__features custom-select__features" name="order-model" id="order-model">
+                                <option value="" disabled selected >Choose model</option>
+                                <option class="order__feature" value="mo-clair">Clair</option>
+                                <option class="order__feature" value="mo-margarita">Margarita</option>
+                                <option class="order__feature" value="mo-selena">Selena</option>
+                            </select>
+                        </div>
+                        <div class="custom-select">
+                            <select class="order__features custom-select__features" name="order-color" id="order-color">
+                                <option value="" disabled selected>Choose color</option>
+                                <option class="order__feature" value="c-black">Black</option>
+                                <option class="order__feature" value="c-red">Red</option>
+                                <option class="order__feature" value="c-white">White</option>
+                            </select>
+                        </div>
+                        <div class="custom-select">
+                            <select class="order__features custom-select__features" name="order-material" id="order-material">
+                                <option value="" disabled selected>Choose fabric</option>
+                                <option class="order__feature" value="ma-fabric">Fabric</option>
+                                <option class="order__feature" value="ma-leather">Leather</option>
+                            </select>
+                        </div>
+                        <label class="custom-checkbox order__transport" for="transport">Transport
+                                <input class="custom-checkbox__input" type="checkbox" checked="checked" name="transport" id="transport" value="transport">
+                                <span class="custom-checkbox__checkmark"></span>
+                        </label>
+                    </fieldset>
+                </form>
+                <img class="order__photo" src="img/slider/red_chair.png" alt="Photo of an example chair">
+                <div class="order__summary">
+                    <h2 class="order__heading heading-2">Summary</h2>
+                    <div class="order__border border"></div>
+                    <div class="order__pricing">
+                        <ul class="order__list-features">
+                            <li class="order__list-heading">Your Product</li>
+                            <li class="order__item">Clair</li>
+                            <li class="order__item">Red</li>
+                            <li class="order__item">Fabric</li>
+                            <li class="order__item">Transport</li>                            
+                        </ul>
+                        <ul class="order__list-prices">
+                            <li class="order__list-heading">&nbsp;</li>
+                            <li class="order__item">$139.99</li>
+                            <li class="order__item">$9.99</li>
+                            <li class="order__item">$69.99</li>
+                            <li class="order__item">$29.99</li> 
+                        </ul>
+                        <ul class="order__list-summary">
+                            <li class="order__item u-bold">Total</li>
+                        </ul>
+                        <ul class="order__list-total">
+                            <li class="order__item u-bold u-text-primary">$299.99</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn--order">Buy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>

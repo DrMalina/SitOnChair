@@ -2,11 +2,20 @@
     max-width: $max-width;
     margin: 0 auto;
     //overflow: hidden;
-    //padding: 0 3rem;
+    padding: 0 2rem;
 }
 
 .u-text-primary {
     color: $color-primary; 
+}
+.u-bold {
+    font-weight: 700;
+}
+
+.heading-2 {
+    font-family: $font-secondary;
+    font-size: 1.8rem;
+    text-transform: uppercase;
 }
 
 .heading-3 {
