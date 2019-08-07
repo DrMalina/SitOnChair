@@ -1,0 +1,57 @@
+.footer {
+    margin-bottom: 2rem;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-column-gap: 4rem;
+    }
+
+    &__copyright {
+        font-size: 1.4rem;
+        color: $color-price-text;
+        grid-column: span 2;
+    }
+
+    &__social {
+        justify-self: end;
+        grid-column: 5 / 6;
+    }
+
+    &__icon {
+
+        &--fb {
+            color: $color-fb;
+        }
+
+        &--tw {
+            color: $color-tw;
+        }
+
+        &--yt {
+            color: $color-yt;
+        }
+
+        &--ins {
+            color: $color-ins;
+        }
+        
+        &:not(:last-child) {
+            margin-right: .5rem;
+        }
+    }
+
+    &__logo {
+        text-transform: uppercase;
+        justify-self: end;
+        grid-column: 6 / -1;
+        font-weight: 700;
+        font-family: $font-primary;
+    }
+
+    &__copyright,
+    &__social,
+    &__logo {
+        align-self: center;
+    }
+}

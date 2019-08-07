@@ -1,8 +1,7 @@
 @import "abstracts/variables";
-@import "abstracts/mixins";                                                                                                                                                                              
-
+@import "abstracts/mixins";                                                                                                                                                                                       
 @import "base/reset";
-@import "base/typography";
+@import "base/typography"; 
 @import "base/utilities";   
 
 @import "components/btn";  
@@ -19,7 +18,8 @@
 @import "layout/gallery";
 @import "layout/pricing"; 
 @import "layout/order";
-@import "layout/contact";                                                                                            
+@import "layout/contact";
+@import "layout/footer";                                                                                             
    
 /* 
 https://github.com/DrMalina/Furniture-WebPage/blob/master/index.html

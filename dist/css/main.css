@@ -72,7 +72,7 @@ body {
   width: 80%;
   justify-self: center;
   text-align: center;
-  align-self: center;
+  align-self: end;
   padding: 1rem 3rem; }
 
 .btn--contact {
@@ -496,6 +496,38 @@ body {
   grid-column: 4 / 6;
   grid-row: 1 / -1;
   display: grid; }
+
+.footer {
+  margin-bottom: 2rem; }
+  .footer__container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 4rem; }
+  .footer__copyright {
+    font-size: 1.4rem;
+    color: #949294;
+    grid-column: span 2; }
+  .footer__social {
+    justify-self: end;
+    grid-column: 5 / 6; }
+  .footer__icon--fb {
+    color: #3b5998; }
+  .footer__icon--tw {
+    color: #00aced; }
+  .footer__icon--yt {
+    color: #bb0000; }
+  .footer__icon--ins {
+    color: #bc2a8d; }
+  .footer__icon:not(:last-child) {
+    margin-right: .5rem; }
+  .footer__logo {
+    text-transform: uppercase;
+    justify-self: end;
+    grid-column: 6 / -1;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif; }
+  .footer__copyright, .footer__social, .footer__logo {
+    align-self: center; }
 
 /* 
 https://github.com/DrMalina/Furniture-WebPage/blob/master/index.html
