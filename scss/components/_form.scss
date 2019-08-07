@@ -1,0 +1,43 @@
+.form {
+
+    &-group {
+        grid-column: 1 / 4;
+        position: relative;
+        margin-top: 3.5rem;
+    }
+
+    &__input {
+        padding: 1.5rem;
+        border-radius: 2px;
+        border: $border-primary;
+        width: 90%;
+        display: block;
+        transition: all .3s;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 .5rem 0 #29dab0;
+        }
+
+        &::focus:invalid {
+            box-shadow: 0 0 1rem 0 red;
+        }
+    }
+
+    &__label {
+        position: absolute;
+        top: -2.8rem;
+        left: 2rem;
+        font-family: $font-secondary;
+        font-size: 1.2rem;
+        font-weight: 700;
+        display: block;
+        transition: all .3s;
+    }
+
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(4rem);
+    }
+}

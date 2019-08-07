@@ -20,7 +20,7 @@ $color-price-text: #949294;
 
 //BORDERS
 $color-border-light: #D4D4D4;
-$border-light: 1px solid #D4D4D4;
+$border-light: 1px solid $color-border-light;
 $border-primary: 1px solid $color-primary;
+$border-primary-light: 1px solid #24BA9D;
 
-//#f1f1f1;

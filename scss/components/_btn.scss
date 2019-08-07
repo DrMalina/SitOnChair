@@ -2,6 +2,7 @@
     &,
     &:link,
     &:visited {
+        border: none;
         text-transform: uppercase;
         text-decoration: none;
         display: inline-block;
@@ -9,6 +10,7 @@
         color: #fff;
         background-color: $color-primary;
         transition: all .2s;
+        cursor: pointer;
     }
 
     &:hover {
@@ -33,5 +35,12 @@
         text-align: center;
         align-self: center;
         padding: 1rem 3rem;
+    }
+
+    &--contact {
+        padding: 1rem 3rem;
+        width: 70%;
+        justify-self: end;
+        margin-right: 2rem;
     }
 }

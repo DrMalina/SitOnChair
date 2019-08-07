@@ -1,9 +1,9 @@
 @import "abstracts/variables";
-@import "abstracts/mixins";                                                                 
+@import "abstracts/mixins";                                                                                                                                                                              
 
 @import "base/reset";
 @import "base/typography";
-@import "base/utilities";
+@import "base/utilities";   
 
 @import "components/btn";  
 @import "components/tooltip"; 
@@ -11,13 +11,15 @@
 @import "components/circle";
 @import "components/fieldset";
 @import "components/custom-select";  
-@import "components/custom-checkbox";                                                                                            
+@import "components/custom-checkbox";  
+@import "components/form";                                                                                          
  
 @import "layout/navbar";  
 @import "layout/showcase";                                 
 @import "layout/gallery";
 @import "layout/pricing"; 
-@import "layout/order";                                                                                     
+@import "layout/order";
+@import "layout/contact";                                                                                            
    
 /* 
 https://github.com/DrMalina/Furniture-WebPage/blob/master/index.html
