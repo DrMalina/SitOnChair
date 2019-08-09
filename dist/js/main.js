@@ -4,6 +4,7 @@ const nextArrow = document.querySelector('.showcase__arrow--right');
 const sliderImgs = document.querySelectorAll('.showcase__slider img');
 const selectOptions = document.querySelectorAll('option');
 const orderFeatures = document.querySelector('.order__list-features');
+//
 const orderTransport = document.querySelector('.order__input--transport');
 
 /* SLIDER */
@@ -60,8 +61,40 @@ const chooseOption = (e) => {
 
     const category = e.target.dataset.category;
     const value = e.target.value;
+    const price = e.target.dataset.price;
+
+    if(e.target.name === 'transport') {
+        
+        if(e.target.checked === true) {
+            displayFeatures(category, value, price);
+        } else {
+            console.log("false");
+            document.querySelector(`.order__item--transport`).classList.remove('visible');
+        }
+
+    }    
+
+    displayFeatures(category, value, price);
+
+}
+
+const displayFeatures = (category,value, price) => {
+    //Features
     document.querySelector(`.order__item--${category}`).classList.add('visible');
     document.querySelector(`.order__item--${category}`).textContent = value;
+
+    //Prices
+    document.querySelector(`.order__list-prices .order__item--${category}`).classList.add('visible');
+    document.querySelector(`.order__list-prices .order__item--${category}`).textContent =  `$${price}`;
+}
+
+const hideFeatures = (category,value, price) => {
+    //Features
+    document.querySelector(`.order__item--${category}`).classList.remove('visible');
+
+    //Prices
+    document.querySelector(`.order__list-prices .order__item--${category}`).classList.remove('visible');
+    document.querySelector(`.order__list-prices .order__item--${category}`).textContent =  '';
 }
 
 /* EVENTS */
