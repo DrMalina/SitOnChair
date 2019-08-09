@@ -11,7 +11,7 @@
     }
 
     &__arrow {
-        //justify-self: center;
+
         font-size: 4rem;
         color: $color-primary;
         cursor: pointer;
@@ -32,7 +32,12 @@
         padding-right: 6rem;
     }
 
+    &__slider {
+        grid-column: 2 / 3;
+    }
+
     &__img {
+        display: none;
         width: 100%;
     }
 

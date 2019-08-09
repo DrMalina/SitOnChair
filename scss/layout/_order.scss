@@ -99,5 +99,10 @@
         }
 
     }
+
+    &__item {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
 

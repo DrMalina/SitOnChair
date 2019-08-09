@@ -33,14 +33,17 @@
     <!-- Showcase -->
     <header id="showcase" class="showcase">
         <div class="container">
-            <i class="showcase__arrow showcase__arrow--left fas fa-angle-left fa-2x"></i>
-            <img class="showcase__img" src="img/slider/black_chair.png" alt="Photo of Our Chair">
+            <i class="showcase__arrow showcase__arrow--left fas fa-angle-left fa-2x" data-direction="left"></i>
+            <div class="showcase__slider">
+                <img class="showcase__img" src="img/slider/black_chair.png" alt="Photo of Our Chair">
+                <img class="showcase__img" src="img/slider/red_chair.png" alt="Photo of Our Chair">
+            </div>
             <div class="showcase__content">
                 <h1 class="showcase__heading"> Sit <span class="u-text-primary">On</span> Our <span class="u-text-primary">Chair</span></h1>
                 <p class="showcase__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, minima perferendis necessitatibus officia ipsum corrupti! Iusto atque obcaecati quaerat itaque sapiente, quisquam vero nulla omnis laboriosam. Incidunt, earum cupiditate placeat aut corrupti nobis illo sapiente error pariatur dolores quia. Dignissimos sint maiores reprehenderit quam possimus consequatur recusandae ratione optio sequi doloribus, necessitatibus esse labore unde.</p>
                 <a href="#" class="btn btn--showcase">Read More</a>
             </div>
-            <i class="showcase__arrow showcase__arrow--right fas fa-angle-right fa-2x"></i>
+            <i class="showcase__arrow showcase__arrow--right fas fa-angle-right fa-2x" data-direction="right"></i>
         </div>
     </header>
     <!-- Section: Gallery -->
@@ -124,35 +127,35 @@
     <section class="order">
         <div class="container">
             <div class="order__container">
-                <form action="" class="order__creator">
+                <form action="" class="order__creator" autocomplete="off">
                     <fieldset class="fieldset fieldset--creator">
                         <legend class="fieldset__legend order__heading heading-2">Create your own chair</legend>
                         <div class="order__border border"></div>
                         <div class="custom-select">
                             <select class="order__features custom-select__features" name="order-model" id="order-model">
-                                <option value="" disabled selected >Choose model</option>
-                                <option class="order__feature" value="mo-clair">Clair</option>
-                                <option class="order__feature" value="mo-margarita">Margarita</option>
-                                <option class="order__feature" value="mo-selena">Selena</option>
+                                <option class="order__feature--default" value="" selected disabled hidden>Choose model</option>
+                                <option class="order__feature" value="clair" data-category="model">Clair</option>
+                                <option class="order__feature" value="margarita" data-category="model">Margarita</option>
+                                <option class="order__feature" value="selena" data-category="model">Selena</option>
                             </select>
                         </div>
                         <div class="custom-select">
                             <select class="order__features custom-select__features" name="order-color" id="order-color">
-                                <option value="" disabled selected>Choose color</option>
-                                <option class="order__feature" value="c-black">Black</option>
-                                <option class="order__feature" value="c-red">Red</option>
-                                <option class="order__feature" value="c-white">White</option>
+                                <option class="order__feature--default" value="" selected disabled hidden>Choose color</option>
+                                <option class="order__feature" value="black" data-category="color">Black</option>
+                                <option class="order__feature" value="red" data-category="color">Red</option>
+                                <option class="order__feature" value="white" data-category="color">White</option>
                             </select>
                         </div>
                         <div class="custom-select">
                             <select class="order__features custom-select__features" name="order-material" id="order-material">
-                                <option value="" disabled selected>Choose material</option>
-                                <option class="order__feature" value="ma-fabric">Fabric</option>
-                                <option class="order__feature" value="ma-leather">Leather</option>
+                                <option class="order__feature--default" value="" selected disabled hidden>Choose material</option>
+                                <option class="order__feature" value="fabric" data-category="material">Fabric</option>
+                                <option class="order__feature" value="leather" data-category="material">Leather</option>
                             </select>
                         </div>
                         <label class="custom-checkbox order__transport" for="transport">Transport
-                                <input class="custom-checkbox__input" type="checkbox" checked="checked" name="transport" id="transport" value="transport">
+                                <input class="custom-checkbox__input order__input--transport" type="checkbox" name="transport" id="transport" value="transport" data-category="transport">
                                 <span class="custom-checkbox__checkmark"></span>
                         </label>
                     </fieldset>
@@ -163,18 +166,18 @@
                     <div class="order__border border"></div>
                     <div class="order__pricing">
                         <ul class="order__list-features">
-                            <li class="order__list-heading">Your Product</li>
-                            <li class="order__item">Clair</li>
-                            <li class="order__item">Red</li>
-                            <li class="order__item">Fabric</li>
-                            <li class="order__item">Transport</li>                            
+                            <li class="order__list-heading">&nbsp;</li>
+                            <li class="order__item order__item--model"></li>
+                            <li class="order__item order__item--color"></li>
+                            <li class="order__item order__item--material"></li>
+                            <li class="order__item order__item--transport"></li>                            
                         </ul>
                         <ul class="order__list-prices">
                             <li class="order__list-heading">&nbsp;</li>
-                            <li class="order__item">$139.99</li>
-                            <li class="order__item">$9.99</li>
-                            <li class="order__item">$69.99</li>
-                            <li class="order__item">$29.99</li> 
+                            <li class="order__item order__item--model">$139.99</li>
+                            <li class="order__item order__item--color">$9.99</li>
+                            <li class="order__item order__item--material">$69.99</li>
+                            <li class="order__item order__item--transport">$29.99</li> 
                         </ul>
                         <ul class="order__list-summary">
                             <li class="order__item u-bold">Total</li>
@@ -233,5 +236,7 @@
             </div>
         </div>
     </section>
+
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
