@@ -3,9 +3,9 @@ const prevArrow = document.querySelector('.showcase__arrow--left');
 const nextArrow = document.querySelector('.showcase__arrow--right');
 const sliderImgs = document.querySelectorAll('.showcase__slider img');
 const selectOptions = document.querySelectorAll('option');
-const orderFeatures = document.querySelector('.order__list-features');
-//
 const orderTransport = document.querySelector('.order__input--transport');
+const orderSummary = document.querySelector('.order__list-summary li');
+const orderTotalPrice = document.querySelector('.order__list-total li');
 
 /* SLIDER */
 
@@ -13,12 +13,12 @@ let sliderIndex = Math.floor(Math.random()*sliderImgs.length); // random photo t
 let timer = 0; 
 sliderImgs[sliderIndex].classList.add('visible');
 
-const addVisibility = () => {
-    sliderImgs[sliderIndex].classList.add('visible');
+const addVisibility = (elem) => {
+    elem.classList.add('visible');
 }
 
-const removeVisibility = () => {
-    sliderImgs[sliderIndex].classList.remove('visible');
+const removeVisibility = (elem) => {
+    elem.classList.remove('visible');
 }
 
 const resetTimer = () => {
@@ -27,7 +27,7 @@ const resetTimer = () => {
 
 const changeSlides = (e) => {
         
-    removeVisibility();
+    removeVisibility(sliderImgs[sliderIndex]);
     clearTimeout(timer);
 
     if(e.target.dataset.direction === 'left') {    
@@ -41,40 +41,42 @@ const changeSlides = (e) => {
         sliderImgs[sliderIndex].style.animation = "moveInLeft 1s";
     }
 
-    addVisibility();
+    addVisibility(sliderImgs[sliderIndex]);
     resetTimer();
 
 }
 
 const sliderCarousel = () => {
-    removeVisibility();
+    removeVisibility(sliderImgs[sliderIndex]);
     sliderIndex++;
     if(sliderIndex >= sliderImgs.length) { sliderIndex = 0};
     sliderImgs[sliderIndex].style.animation = "moveInRight 1s";
-    addVisibility();
+    addVisibility(sliderImgs[sliderIndex]);
     resetTimer();
 }
 
 /* ORDER */
 
-const chooseOption = (e) => {
+const displayOption = (e) => {
 
     const category = e.target.dataset.category;
     const value = e.target.value;
     const price = e.target.dataset.price;
 
-    if(e.target.name === 'transport') {
+    if(e.target.name === 'transport') { //toggling checkbox transport
         
         if(e.target.checked === true) {
             displayFeatures(category, value, price);
         } else {
-            console.log("false");
-            document.querySelector(`.order__item--transport`).classList.remove('visible');
+            hideFeatures(category);
         }
 
-    }    
+    }  else {
 
-    displayFeatures(category, value, price);
+        displayFeatures(category, value, price);
+    }  
+
+    calculatePrice(); 
 
 }
 
@@ -86,27 +88,55 @@ const displayFeatures = (category,value, price) => {
     //Prices
     document.querySelector(`.order__list-prices .order__item--${category}`).classList.add('visible');
     document.querySelector(`.order__list-prices .order__item--${category}`).textContent =  `$${price}`;
+    document.querySelector(`.order__list-prices .order__item--${category}`).setAttribute('data-price', price);
 }
 
-const hideFeatures = (category,value, price) => {
+const hideFeatures = (category) => {
+
     //Features
     document.querySelector(`.order__item--${category}`).classList.remove('visible');
+    document.querySelector(`.order__item--${category}`).textContent = '';
 
     //Prices
     document.querySelector(`.order__list-prices .order__item--${category}`).classList.remove('visible');
-    document.querySelector(`.order__list-prices .order__item--${category}`).textContent =  '';
+    document.querySelector(`.order__list-prices .order__item--${category}`).textContent = '';
+    document.querySelector(`.order__list-prices .order__item--${category}`).setAttribute('data-price', '');
+    
+}
+
+const calculatePrice = () => {
+    
+    let total = 0;
+    document.querySelectorAll(`.order__list-prices .order__item`).forEach(el => {
+        if(el.dataset.price !== '' && typeof el.dataset.price !== 'undefined') {            
+            total += Number(el.dataset.price);
+        }
+    });
+
+    if (total !== 0) {
+        [orderSummary, orderTotalPrice].forEach(el => {
+            addVisibility(el);
+        });
+        orderTotalPrice.textContent = `$${total.toFixed(2)}`;
+    } else {
+        [orderSummary, orderTotalPrice].forEach(el => {
+            removeVisibility(el);
+        });
+    }
+
 }
 
 /* EVENTS */
+
 window.addEventListener('load', () => {
     sliderCarousel();
 });
 prevArrow.addEventListener('click', changeSlides);
 nextArrow.addEventListener('click', changeSlides);
 selectOptions.forEach(option => {
-    option.addEventListener('click', chooseOption);
+    option.addEventListener('click', displayOption);
 });
-orderTransport.addEventListener('click', chooseOption);
+orderTransport.addEventListener('click', displayOption);
 
 
 

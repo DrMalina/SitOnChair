@@ -1,7 +1,6 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";                                                                                                                                            
-@import "base/animation";                                                                                                                          
-@import "base/reset";
+@import "base/animation";                                                                                                                    @import "base/reset";           
 @import "base/typography"; 
 @import "base/utilities";   
 
@@ -19,7 +18,7 @@
 @import "layout/gallery";
 @import "layout/pricing"; 
 @import "layout/order";
-@import "layout/contact";
+@import "layout/contact"; 
 @import "layout/footer";                                                                                              
    
 /* 
