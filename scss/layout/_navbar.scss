@@ -7,8 +7,12 @@
     .container {
         display: grid;
         grid-template-columns: 6fr 2fr;
-        padding: 1rem 0;
+        padding: 1rem 2rem;
         align-items: center;
+
+        @include respond(phone) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__logo {
@@ -17,6 +21,10 @@
             text-transform: uppercase;
             color: #fff;
             font-size: 2.4rem;
+        }
+
+        @include respond(phone) {
+            text-align: center;
         }
     }
 
@@ -34,6 +42,10 @@
             &:hover {
                 color: #fff;
             }
+        }
+
+        @include respond(phone) {
+            padding-top: 1rem;
         }
     }
 }

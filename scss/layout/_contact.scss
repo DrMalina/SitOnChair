@@ -12,6 +12,16 @@
     &__img {
         height: 80%;
         justify-self: end;
+
+        @include respond(tab-land) {
+            justify-self: start;
+            width: 80%;
+        }
+
+        @include respond(fix-1100) {
+            height: 100%;
+            width: 100%;
+        }
     }
 
     &__privacy {
@@ -19,6 +29,19 @@
         font-size: 1.6rem;
         line-height: 3.2;
         justify-self: end;
+
+        @include respond(tab-land) {
+            justify-self: start;
+        }
+
+        @include respond(fix-1100) {
+            font-size: 1.4rem;
+            margin-top: 0;
+        }
+        
+        @include respond(tab-port) {
+            line-height: 2;
+        }
     }
 
     &__right-panel {

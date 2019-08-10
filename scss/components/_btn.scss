@@ -24,7 +24,6 @@
 
     &--price-plan {
         grid-column: 2 / 3;
-        //grid-column: 1 / -1;
         padding: 1rem 3rem;
         align-self: end;
     }
@@ -42,5 +41,13 @@
         width: 70%;
         justify-self: end;
         margin-right: 2rem;
+        align-self: end;
+
+        @include respond(tab-land) {
+            justify-self: start;
+            margin-right: 0;
+            width: 90%;
+        } 
+        
     }
 }

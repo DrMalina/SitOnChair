@@ -6,6 +6,11 @@
         grid-gap: 4rem;
         margin-top: 10rem;
         margin-bottom: 10rem;
+
+        @include respond(fix-800) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2rem;
+        }
     }
 
     &__card {
@@ -18,10 +23,21 @@
         &--description {
             border: $border-light;
             padding: 1.5rem;
+
+            @include respond(fix-800) {
+                grid-column: 1 /-1;
+                padding: 5rem;
+                margin-left: 4rem;
+                margin-right: 4rem;
+            }
         }
 
         &:hover {
             transform: scale(1.1);
+
+            @include respond(fix-800) {
+                transform: scale(1.05); 
+            }
         }
     }
 
@@ -39,6 +55,11 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2,1fr);
+
+        @include respond(phone) {
+            padding: .5rem;
+            grid-template-rows: auto;
+        }
     }
 
     &__heading {
@@ -51,11 +72,28 @@
 
         &--description {
             padding-top: 2rem;
+
+            @include respond(fix-1100) {
+                padding-top: 0;
+            }
+        }
+
+        @include respond(fix-1100) {
+            font-size: 1.4rem;
+            grid-column: 1 / -1;
+        }
+
+        @include respond(fix-800) {
+            padding-bottom: 1rem; 
         }
     }
 
     &__paragraph {
         grid-column: 1 / -1;
+
+        @include respond(fix-1100) {
+            font-size: 1.4rem; 
+        }
     }
 
     &__border {
@@ -65,6 +103,14 @@
 
         &--description {
             align-self: initial;
+
+            @include respond(fix-800) {
+                margin-bottom: 1rem; 
+            } 
+        }
+
+        @include respond(tab-port) {
+            align-self: inherit;
         }
     }
 }

@@ -8,6 +8,14 @@
         justify-content: center;
         align-items: center;
         height: 50vh;
+
+        @include respond(fix-700) {
+            grid-template-columns: 1fr 6fr 1fr;
+        }
+
+        @include respond(tab-land) {
+            height: auto;
+        }
     }
 
     &__arrow {
@@ -18,6 +26,11 @@
 
         &--right {
             justify-self: end;
+
+            @include respond(fix-700) {
+                grid-column: 3 / -1;
+                grid-row: 1 / 2;
+            }
         }
 
         &:hover {
@@ -30,23 +43,51 @@
         padding-top: 6rem;
         padding-left: 6rem;
         padding-right: 6rem;
+
+        @include respond(fix-800) {
+            padding: 0;
+        }
+
+        @include respond(fix-700) {
+            grid-column: 1 / -1;
+        }
     }
 
     &__slider {
         grid-column: 2 / 3;
+
+        @include respond(fix-700) {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
     }
 
     &__img {
         display: none;
         width: 100%;
+
+        @include respond(fix-700) {
+            width: 50%;
+            justify-self: center;
+        }
     }
 
     &__heading {
         text-transform: uppercase;
         font-size: 4rem;
+
+        @include respond(tab-land) {
+            font-size: 3rem;
+            padding-bottom: 1rem;
+            margin-top: 2rem;
+        }
     }
 
     &__description {
         margin-bottom: 4.5rem;
+
+        @include respond(tab-land) {
+            font-size: 1.4rem;
+        }
     }
 }

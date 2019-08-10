@@ -1,7 +1,7 @@
 .container {
     max-width: $max-width;
     margin: 0 auto;
-    //overflow: hidden;
+    //overflow: hidden; 
     padding: 0 2rem;
 }
 
@@ -17,6 +17,10 @@
     font-size: 1.8rem;
     text-transform: uppercase;
     font-weight: 700 !important;
+
+    @include respond(tab-land) {
+        font-size: 1.4rem;
+    }
 }
 
 .heading-3 {

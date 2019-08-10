@@ -5,6 +5,14 @@
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         grid-column-gap: 4rem;
+
+        @include respond(tab-land) {
+            grid-column-gap: 0; 
+        }
+
+        @include respond(fix-1100) {
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
 
     &__copyright {
@@ -16,6 +24,10 @@
     &__social {
         justify-self: end;
         grid-column: 5 / 6;
+
+        @include respond(fix-1100) {
+            grid-column: 3 / 4;
+        }
     }
 
     &__icon {
@@ -46,7 +58,11 @@
         justify-self: end;
         grid-column: 6 / -1;
         font-weight: 700;
-        font-family: $font-primary;
+        font-family: $font-primary; 
+
+        @include respond(fix-1100) {
+            grid-column: 4 / -1;
+        }
     }
 
     &__copyright,

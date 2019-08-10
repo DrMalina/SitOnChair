@@ -13,6 +13,10 @@
         -webkit-appearance: button;
         appearance: button;
         outline: none;
+
+        @include respond(fix-700) {
+            padding: 1rem 1.2rem;
+        }
     }
 
     &:before {

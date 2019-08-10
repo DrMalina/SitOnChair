@@ -8,6 +8,10 @@
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 4rem;
         padding-bottom: 6rem;
+
+        @include respond(tab-port) {
+            grid-column-gap: 1rem; 
+        }
     }
 
     &__border {
@@ -103,6 +107,10 @@
     &__item {
         opacity: 0;
         visibility: hidden;
+
+        @include respond(fix-700) {
+            font-size: 1.4rem;
+        }
     }
 }
 
