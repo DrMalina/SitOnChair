@@ -34,6 +34,10 @@
         text-align: center;
         align-self: end;
         padding: 1rem 3rem;
+
+        @include respond(phone) {
+            margin-top: 3rem;
+        }
     }
 
     &--contact {
@@ -48,6 +52,11 @@
             margin-right: 0;
             width: 90%;
         } 
+
+        @include respond(phone) {
+            margin-top: 4rem;
+            justify-self: center;
+        }
         
     }
 }

@@ -11,6 +11,7 @@
 
         @include respond(fix-700) {
             grid-template-columns: 1fr 6fr 1fr;
+            margin-top: 5rem; 
         }
 
         @include respond(tab-land) {
@@ -67,7 +68,7 @@
         width: 100%;
 
         @include respond(fix-700) {
-            width: 50%;
+            width: 80%;
             justify-self: center;
         }
     }

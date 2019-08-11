@@ -116,11 +116,13 @@ const calculatePrice = () => {
     if (total !== 0) {
         [orderSummary, orderTotalPrice].forEach(el => {
             addVisibility(el);
+            addVisibility(el.parentElement);
         });
         orderTotalPrice.textContent = `$${total.toFixed(2)}`;
     } else {
         [orderSummary, orderTotalPrice].forEach(el => {
             removeVisibility(el);
+            removeVisibility(el.parentElement);
         });
     }
 

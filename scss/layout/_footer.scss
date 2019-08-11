@@ -13,12 +13,22 @@
         @include respond(fix-1100) {
             grid-template-columns: repeat(4, 1fr);
         }
+
+        @include respond(fix-700) {
+            grid-row-gap: 2rem;
+        }
     }
 
     &__copyright {
         font-size: 1.4rem;
         color: $color-price-text;
         grid-column: span 2;
+
+        @include respond(fix-700) {
+            grid-column: 1 / -1;
+            grid-row: 2/ 3;
+            justify-self: center;
+        }
     }
 
     &__social {
@@ -27,6 +37,12 @@
 
         @include respond(fix-1100) {
             grid-column: 3 / 4;
+        }
+
+        @include respond(fix-700) {
+            grid-column: 1 / -1;
+            grid-row: 3 / 4;
+            justify-self: center;
         }
     }
 
@@ -50,6 +66,10 @@
         
         &:not(:last-child) {
             margin-right: .5rem;
+
+            @include respond(fix-700) {
+                margin-right: 2rem;
+            }
         }
     }
 
@@ -62,6 +82,12 @@
 
         @include respond(fix-1100) {
             grid-column: 4 / -1;
+        }
+
+        @include respond(fix-700) {
+            grid-column: 1 / -1;
+            grid-row: 1 / 2;
+            justify-self: center;
         }
     }
 
