@@ -84,33 +84,38 @@ const displayOption = (e) => {
     calculatePrice();
 }
 
-
-
 const displayFeatures = (category,value, price) => {
+
+    const item_feature = document.querySelector(`.order__item--${category}`);
+    const item_price = document.querySelector(`.order__list-prices .order__item--${category}`);
+
     //Features
-    document.querySelector(`.order__item--${category}`).classList.add('visible');
-    document.querySelector(`.order__item--${category}`).textContent = value;
+    item_feature.classList.add('visible');
+    item_feature.textContent = value;
 
     //Prices
-    document.querySelector(`.order__list-prices .order__item--${category}`).classList.add('visible');
-    document.querySelector(`.order__list-prices .order__item--${category}`).textContent =  `$${price}`;
-    document.querySelector(`.order__list-prices .order__item--${category}`).setAttribute('data-price', price);
+    item_price.classList.add('visible');
+    item_price.textContent =  `$${price}`;
+    item_price.setAttribute('data-price', price);
 }
 
 const hideFeatures = (category) => {
 
+    const item_feature = document.querySelector(`.order__item--${category}`);
+    const item_price = document.querySelector(`.order__list-prices .order__item--${category}`);
+
     //Features
-    document.querySelector(`.order__item--${category}`).classList.remove('visible');
-    document.querySelector(`.order__item--${category}`).textContent = '';
+    item_feature.classList.remove('visible');
+    item_feature.textContent = '';
 
     //Prices
-    document.querySelector(`.order__list-prices .order__item--${category}`).classList.remove('visible');
-    document.querySelector(`.order__list-prices .order__item--${category}`).textContent = '';
-    document.querySelector(`.order__list-prices .order__item--${category}`).setAttribute('data-price', '');
+    item_price.classList.remove('visible');
+    item_price.textContent = '';
+    item_price.setAttribute('data-price', '');
     
 }
 
-const calculatePrice = () => {
+const calculatePrice = () => { 
     
     let total = 0;
 
