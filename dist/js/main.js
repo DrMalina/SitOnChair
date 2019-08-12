@@ -1,11 +1,11 @@
 
 /* DOM ELEMENTS */
+
 const prevArrow = document.querySelector('.showcase__arrow--left');
 const nextArrow = document.querySelector('.showcase__arrow--right');
 const sliderImgs = document.querySelectorAll('.showcase__slider img');
-const orderTransport = document.querySelector('.order__input--transport');
 const orderTotalPrice = document.querySelector('.order__list-total li');
-const selectFields = document.querySelectorAll('select');
+const orderSelectable = document.querySelectorAll('[data-selectable]');
 
 /* SLIDER */
 
@@ -130,18 +130,13 @@ const calculatePrice = () => {
 
 /* EVENTS */
 
-console.log(document.querySelectorAll('[data-selectable]'));
-
 window.addEventListener('load', () => {
     sliderCarousel(); 
 });
 prevArrow.addEventListener('click', changeSlides);
 nextArrow.addEventListener('click', changeSlides);
-selectFields.forEach(select => {
-    select.addEventListener('change', displayOption);
-})
-orderTransport.addEventListener('click', displayOption);
-
-
+orderSelectable.forEach(option => {
+    option.addEventListener('change', displayOption);
+}); 
 
       
