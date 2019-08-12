@@ -3,9 +3,7 @@
 const prevArrow = document.querySelector('.showcase__arrow--left');
 const nextArrow = document.querySelector('.showcase__arrow--right');
 const sliderImgs = document.querySelectorAll('.showcase__slider img');
-const selectOptions = document.querySelectorAll('option');
 const orderTransport = document.querySelector('.order__input--transport');
-const orderSummary = document.querySelector('.order__list-summary li');
 const orderTotalPrice = document.querySelector('.order__list-total li');
 const selectFields = document.querySelectorAll('select');
 
@@ -59,30 +57,34 @@ const sliderCarousel = () => {
 
 /* ORDER */
 
-const displayOption = (e) => {
+const displayOption = (e) => { 
 
-    console.log('test');
+    if(e.target.id !== 'transport') {        
+        const targetOpt = e.target.options[e.target.selectedIndex];
+        const category = targetOpt.dataset.category; 
+        const value = targetOpt.value;
+        const price = targetOpt.dataset.price;
 
-    const category = e.target.dataset.category; 
-    const value = e.target.value;
-    const price = e.target.dataset.price;
+        displayFeatures(category, value, price);
 
-    if(e.target.name === 'transport') { //toggling checkbox transport
-        
-        if(e.target.checked === true) {
+    } else { //toggle checkbox
+
+        const category = e.target.dataset.category; 
+        const value = e.target.value;
+        const price = e.target.dataset.price;
+
+        if(e.target.checked === true) {  
             displayFeatures(category, value, price);
         } else {
             hideFeatures(category);
         }
 
-    }  else {
+    }
 
-        displayFeatures(category, value, price);
-    }  
-
-    calculatePrice(); 
-
+    calculatePrice();
 }
+
+
 
 const displayFeatures = (category,value, price) => {
     //Features
@@ -124,19 +126,17 @@ const calculatePrice = () => {
         orderTotalPrice.textContent = `$${total.toFixed(2)}`;
     }
 
-}
-
+} 
 
 /* EVENTS */
+
+console.log(document.querySelectorAll('[data-selectable]'));
 
 window.addEventListener('load', () => {
     sliderCarousel(); 
 });
 prevArrow.addEventListener('click', changeSlides);
 nextArrow.addEventListener('click', changeSlides);
-/* selectOptions.forEach(option => {
-    option.addEventListener('click', displayOption);
-}); */
 selectFields.forEach(select => {
     select.addEventListener('change', displayOption);
 })
