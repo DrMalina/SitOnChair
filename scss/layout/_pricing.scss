@@ -29,6 +29,11 @@
         @include respond(phone) {
             margin-bottom: 2rem;
         }
+
+        @include respond(fix-500) {
+            grid-column: 1 / -1;
+        } 
+
     }
 
     &__card {
@@ -39,14 +44,10 @@
         text-align: center;
         position: relative;
         padding-bottom: 4rem;
-
-        //height: 50rem;
-
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
         grid-template-rows: min-content max-content min-content;
         grid-row-gap: 3.5rem;
-        //grid-template-columns: 1fr;
 
         @include respond(phone) {
             grid-column: 1 / -1;
@@ -55,11 +56,14 @@
             width: 75%; 
             justify-self: center;
         }
+
+        @include respond(fix-400) {
+            width: 100%;
+        }
     }
 
     &__title {
         grid-column: 2 / 3;
-        //grid-column: 1 / -1;
         padding-top: 5rem;
 
         br {

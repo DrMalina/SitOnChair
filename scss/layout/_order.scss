@@ -34,6 +34,10 @@
         @include respond(phone) {
             grid-column: 1 / 2;
         }
+
+        @include respond(fix-500) {
+            grid-column: 1 / -1;
+        }
     }
 
     &__features {
@@ -63,7 +67,7 @@
         font-size: 1.6rem;
 
         @include respond(phone) {
-            justify-self: end;
+            justify-self: start;
         }
     }
 
@@ -84,6 +88,11 @@
         &-border{
             width: 50%;
             margin-bottom: 0;
+
+            @include respond(fix-500) {
+                width: 100%
+            }
+
         }
 
         @include respond(phone) {
@@ -141,7 +150,7 @@
 
         &-summary,
         &-total {
-            display: none;
+            display: block;
             border-top: $border-light;
             padding-top: .5rem;
             font-size: 1.8rem;
@@ -151,6 +160,10 @@
             }
 
             li {
+
+                display: block;
+                opacity: 1;
+                visibility: visible;
 
                 @include respond(phone) {
                     font-size: 2rem;

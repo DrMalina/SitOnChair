@@ -1,3 +1,4 @@
+
 /* DOM ELEMENTS */
 const prevArrow = document.querySelector('.showcase__arrow--left');
 const nextArrow = document.querySelector('.showcase__arrow--right');
@@ -6,6 +7,7 @@ const selectOptions = document.querySelectorAll('option');
 const orderTransport = document.querySelector('.order__input--transport');
 const orderSummary = document.querySelector('.order__list-summary li');
 const orderTotalPrice = document.querySelector('.order__list-total li');
+const selectFields = document.querySelectorAll('select');
 
 /* SLIDER */
 
@@ -59,7 +61,9 @@ const sliderCarousel = () => {
 
 const displayOption = (e) => {
 
-    const category = e.target.dataset.category;
+    console.log('test');
+
+    const category = e.target.dataset.category; 
     const value = e.target.value;
     const price = e.target.dataset.price;
 
@@ -107,37 +111,35 @@ const hideFeatures = (category) => {
 const calculatePrice = () => {
     
     let total = 0;
+
     document.querySelectorAll(`.order__list-prices .order__item`).forEach(el => {
         if(el.dataset.price !== '' && typeof el.dataset.price !== 'undefined') {            
             total += Number(el.dataset.price);
         }
     });
 
-    if (total !== 0) {
-        [orderSummary, orderTotalPrice].forEach(el => {
-            addVisibility(el);
-            addVisibility(el.parentElement);
-        });
-        orderTotalPrice.textContent = `$${total.toFixed(2)}`;
+    if(total === 0) {
+        orderTotalPrice.textContent = '$0';
     } else {
-        [orderSummary, orderTotalPrice].forEach(el => {
-            removeVisibility(el);
-            removeVisibility(el.parentElement);
-        });
+        orderTotalPrice.textContent = `$${total.toFixed(2)}`;
     }
 
 }
 
+
 /* EVENTS */
 
 window.addEventListener('load', () => {
-    sliderCarousel();
+    sliderCarousel(); 
 });
 prevArrow.addEventListener('click', changeSlides);
 nextArrow.addEventListener('click', changeSlides);
-selectOptions.forEach(option => {
+/* selectOptions.forEach(option => {
     option.addEventListener('click', displayOption);
-});
+}); */
+selectFields.forEach(select => {
+    select.addEventListener('change', displayOption);
+})
 orderTransport.addEventListener('click', displayOption);
 
 
