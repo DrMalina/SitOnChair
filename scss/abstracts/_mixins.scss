@@ -34,10 +34,6 @@
 
     @if $breakpoint == fix-500 {
         @media only screen and (max-width: 500px) { @content }; 
-    }
-
-    /* @if $breakpoint == fix-400 { 
-        @media only screen and (max-width: 500px) { @content }; 
-    } */
+    } 
     
 }
