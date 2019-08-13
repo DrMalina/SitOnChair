@@ -43,7 +43,7 @@
             margin-right: 4rem;
         }
 
-        @include respond(fix-400) {
+        @include respond(fix-500) {
             margin-left: 0;
             margin-right: 0;
         }
@@ -77,7 +77,7 @@
             grid-template-rows: auto;
         }
 
-        @include respond(fix-400) {
+        @include respond(fix-500) {
             padding: .5rem 2rem;
         }
     }

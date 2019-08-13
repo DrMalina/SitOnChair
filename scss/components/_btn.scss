@@ -42,20 +42,20 @@
 
     &--contact {
         padding: 1rem 3rem;
-        width: 70%;
-        justify-self: end;
-        margin-right: 2rem;
+        width: 50%;
+        justify-self: center;
+        margin-top: 3rem;
         align-self: end;
 
-        @include respond(tab-land) {
-            justify-self: start;
-            margin-right: 0;
-            width: 90%;
-        } 
 
         @include respond(phone) {
             margin-top: 4rem;
             justify-self: center;
+        }
+
+        @include respond(fix-1100) {
+            margin-top: 0;
+            align-self: start;
         }
         
     }

@@ -57,7 +57,7 @@
             justify-self: center;
         }
 
-        @include respond(fix-400) {
+        @include respond(fix-500) {
             width: 100%;
         }
     }
@@ -101,7 +101,6 @@
     &__feature {
         padding: 1rem 2rem;
         color: $color-price-text;
-        //border: $border-light;
         border-top: $border-light;
 
         &:nth-child(2n-1) {

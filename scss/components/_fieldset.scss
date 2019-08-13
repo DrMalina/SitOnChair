@@ -1,6 +1,5 @@
 .fieldset {
-    border: none;
-    display: grid;
+    border: none; 
 
     &--creator {
         grid-template-columns: 1fr 6fr;
@@ -10,14 +9,11 @@
         }
     }
 
-    &--contact {
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: repeat(5, min-content);
-        
-        @include respond(phone) {
-            grid-template-columns: repeat(2, 1fr);
-        }
+    &__grid-parent {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr) 3fr;
     }
+  
 
     &__legend {
         grid-column: 1 / -1;

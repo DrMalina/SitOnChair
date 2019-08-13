@@ -1,4 +1,3 @@
-
 /* DOM ELEMENTS */
 
 const prevArrow = document.querySelector('.showcase__arrow--left');

@@ -9,7 +9,6 @@
         position: absolute;
         z-index: 10;
         grid-column: 2 / 3;
-        //grid-column: 1 / -1;
         justify-self: center;
         transform: translateY(-50%);
         border: $border-light;
@@ -31,7 +30,6 @@
         height: 14rem;
         width: 14rem;
         grid-column: 2 / 3;
-        //grid-column: 1 / -1;
         justify-self: center;
         display: grid;
         

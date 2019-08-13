@@ -1,6 +1,5 @@
 .order {
     background-color: $color-billing;
-    //height: 50rem;
     margin-bottom: 6rem;
 
     
@@ -138,8 +137,9 @@
             padding-left: 1rem;
 
             @include respond(phone) {
+                padding-left: 0;
+                padding-right: 2rem;
                 text-align: end;
-                padding-right: 1rem;
             }
         }
 
@@ -179,7 +179,7 @@
 
             @include respond(phone) {
                 padding-right: 0;
-                padding-left: 1rem;
+                padding-left: 2rem;
                 text-align: start;
             } 
         }
